@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "intermediatech.sidakapp",
+      "sha256_cert_fingerprints": [
+        "73:6F:EA:3C:96:DF:09:F0:06:9F:9C:6C:FB:04:AB:C8:00:68:F1:08:6C:11:78:69:AF:85:82:74:77:E4:14:B3"
+      ]
+    }
+  }
+]
