@@ -21,6 +21,11 @@ class ExampleController extends Controller
 
     public function login()
     {
-        
+        $data = ['Success'=>'run'];
+        return response()->json(
+                    [
+                        'status' => 'success',
+                        'result' => $data,
+                    ], 200);
     }
 }
