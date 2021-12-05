@@ -1,0 +1,38 @@
+version: '3'
+services:
+
+  #Laravel App
+  rest:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: aqilspc/laravelresttravelandong
+    container_name: rest
+    restart: unless-stopped
+    tty: true
+    environment:
+      SERVICE_NAME: rest
+      SERVICE_TAGS: rest
+    working_dir: /var/www/html
+    volumes:
+      - ./:/var/www/html
+    networks:
+      - laravel-prod
+  #Nginx Service
+  nginx:
+    image: nginx:alpine
+    container_name: nginx
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "8081:8081"
+    volumes:
+      - ./:/var/www/html
+      - ./nginx/conf.d/:/etc/nginx/conf.d/
+    networks:
+      - laravel-prod
+
+#Docker Networks
+networks:
+  laravel-prod:
+    driver: bridge
