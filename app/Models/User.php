@@ -61,7 +61,7 @@ class User{
 			$data = DB::table('users')->insertGetId(
 				[
 					'role'=>'customer',
-					'password'=>\bcrypt($request->password),
+					'password'=>Hash::make($request->password),
 					'nama_depan'=>$request->nama_depan,
 					'nama_belakang'=>$request->nama_belakang,
 					'username'=>$request->username,
