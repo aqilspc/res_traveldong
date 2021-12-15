@@ -35,7 +35,7 @@ $router->group(['prefix' => 'api'], function () use ($router) {
     $router->post('user_login', 'UserController@login');
     $router->post('user_register', 'UserController@register');
     $router->get('user_get_by_id/{id}', 'UserController@getUserById');
-    $router->put('user_update', 'UserController@getUserById');
+    $router->put('user_update', 'UserController@updateUser');
 });
 
 
