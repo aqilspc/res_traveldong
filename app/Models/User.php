@@ -51,7 +51,7 @@ class User{
 
 	public function register($request)
 	{
-		$data = DB::table('users')->where('username')->first();
+		$data = DB::table('users')->where('username',$request->username)->first();
 		$arr = [];
 		if($data)
 		{
