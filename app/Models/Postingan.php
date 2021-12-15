@@ -9,7 +9,7 @@ class Postingan{
 	{
 		$data = DB::table('posts as ps')
 		->join('travels as ts','ts.id','=','ps.id_travel')
-		->select('ps.*','ts.nama_travel')
+		->select('ps.*','ts.nama_travel','ts.logo')
 		->get();
 		return $data;
 
