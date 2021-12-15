@@ -22,8 +22,7 @@ class Postingan{
 	public function getPostinganByidTravel($id)
 	{
 		$data = DB::table('posts')->where('id_travel',$id)->get();
-		$hasil = [$data];
-		return $hasil;
+		return $data;
 	}
 
 	public function postPostingan($request)
