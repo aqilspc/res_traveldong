@@ -84,9 +84,9 @@ class Postingan{
 		return $data;
 	}
 
-	public function deletePostingan($request)
+	public function deletePostingan($id)
 	{
-		$data = DB::table('posts')->where('id',$request->id)->delete();
+		$data = DB::table('posts')->where('id',$id)->delete();
 		return $data;
 	}
 }
