@@ -23,7 +23,7 @@ $router->group(['prefix' => 'api'], function () use ($router) {
     $router->get('postingan_by_travel/{id}', 'PostinganController@getPostinganByidTravel');
     $router->post('postingan_create', 'PostinganController@postPostingan');
     $router->put('postingan_update', 'PostinganController@updatePostingan');
-    $router->delete('postingan_delete', 'PostinganController@deletePostingan');
+    $router->delete('postingan_delete/{id}', 'PostinganController@deletePostingan');
 
     // Pesanan
     $router->get('pesanan_by_id_pesanan/{id}', 'PesananController@getPesananById');
