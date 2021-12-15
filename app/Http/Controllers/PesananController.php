@@ -20,7 +20,7 @@ class PesananController extends Controller
     public function getPesananById($id)
     {
         $data = $this->model()->getPesananById($id);
-        if($data)
+        if($data[0] != null || $data[0] != NULL)
         {
             return $data;
         }else
