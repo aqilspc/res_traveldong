@@ -4,7 +4,7 @@ namespace App\Models;
 use DB;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Hash;
-class Pesanan{
+class User{
 
 	public function login($request)
 	{
