@@ -53,7 +53,7 @@ class Postingan{
 			[
 				'id_travel'=>$request->id_travel,
 				'nama_post'=>$request->nama_post,
-				'foto'=>$request->foto,
+				//'foto'=>$request->foto,
 				'tanggal_mulai'=>$request->tanggal_mulai,
 				'tanggal_akhir'=>$request->tanggal_akhir,
 				'harga'=>$request->harga,
@@ -71,7 +71,7 @@ class Postingan{
 		$data = DB::table('posts')->where('id',$request->id)->update(
 			[
 				'nama_post'=>$request->nama_post,
-				'foto'=>$request->foto,
+				//'foto'=>$request->foto,
 				'tanggal_mulai'=>$request->tanggal_mulai,
 				'tanggal_akhir'=>$request->tanggal_akhir,
 				'harga'=>$request->harga,
