@@ -28,7 +28,7 @@ class Postingan{
 
 	public function getGaleryByIdTravel($id)
 	{
-		$data = DB::table('galery_travels')->where('id_post',$id)->get();
+		$data = DB::table('galery_posts')->where('id_post',$id)->get();
 		return $data;
 	}
 
