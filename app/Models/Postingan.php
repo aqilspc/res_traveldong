@@ -7,21 +7,31 @@ class Postingan{
 
 	public function getPostinganAll()
 	{
-		$data = DB::table('posts')->get();
+		$data = DB::table('posts as ps')
+		->join('travels as ts','ts.id','=','ps.id_travel')
+		->select('ps.*','ts.nama_travel')
+		->get();
 		return $data;
 
 	}
 
 	public function getPostinganByid($id)
 	{
-		$data = DB::table('posts')->where('id',$id)->first();
+		$data = DB::table('posts as ps')
+		->join('travels as ts','ts.id','=','ps.id_travel')
+		->select('ps.*','ts.nama_travel')
+		->where('ps.id',$id)
+		->first();
 		$hasil = [$data];
 		return $hasil;
 	}
 
 	public function getPostinganByidTravel($id)
 	{
-		$data = DB::table('posts')->where('id_travel',$id)->get();
+		$data = DB::table('posts as ps')
+		->join('travels as ts','ts.id','=','ps.id_travel')
+		->where('ps.id_travel',$id)
+		->get();
 		return $data;
 	}
 
