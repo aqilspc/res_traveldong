@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use DB;
 use App\Models\Postingan;
+use Illuminate\Http\Request;
 class PostinganController extends Controller
 {
     /**
