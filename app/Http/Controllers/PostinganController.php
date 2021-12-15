@@ -26,8 +26,7 @@ class PostinganController extends Controller
         $data = $this->model()->getPostinganAll();
         return response()->json(
                     [
-                        'status' => 'success',
-                        'result' => $data,
+                        $data
                     ], 200);
     }
 }
