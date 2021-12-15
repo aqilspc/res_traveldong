@@ -8,7 +8,7 @@ class User{
 
 	public function login($request)
 	{
-		$data = DB::table('users')->where('username')->first();
+		$data = DB::table('users')->where('username',$request->username)->first();
 		$arr = [];
 		if($data)
 		{
