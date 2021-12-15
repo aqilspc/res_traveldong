@@ -19,7 +19,7 @@ class User{
 				$role = $data->role;
 				if($role == 'customer')
 				{
-					$arr = [
+					$arr = [0][
 						'id' =>$data->id,
 						'nama'=>$data->nama_depan.' '.$data->nama_belakang,
 						'role'=>$role,
@@ -29,7 +29,7 @@ class User{
 					$travel = DB::table('travels')->where('id_user',$data->id)->first();
 					if($travel)
 					{
-						$arr = [
+						$arr = [0][
 							'id' =>$data->id,
 							'nama'=>$travel->nama_travel,
 							'role'=>$role,
