@@ -2,16 +2,18 @@
 
 namespace App\Http\Controllers;
 use DB;
-class ExampleController extends Controller
+use App\Models\Postingan;
+class PostinganController extends Controller
 {
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+    public function model()
     {
-        //
+        $data = new Postingan();
+        return $data;
     }
 
     public function index()
@@ -19,9 +21,9 @@ class ExampleController extends Controller
         return 'none';
     }
 
-    public function getImage()
+    public function getPostinganAll()
     {
-        $data = DB::table('gambar')->get();
+        $data = $this->model()->getPostinganAll();
         return response()->json(
                     [
                         'status' => 'success',

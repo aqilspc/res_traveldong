@@ -13,11 +13,11 @@
 |
  */
 
-$router->get('/', 'ExampleController@index');
+$router->get('/', 'PostinganController@index');
 
 // Presensi
-$router->group(['prefix' => 'assets'], function () use ($router) {
-    $router->get('image', 'ExampleController@getImage');
+$router->group(['prefix' => 'api'], function () use ($router) {
+    $router->get('postingan_all', 'PostinganController@getPostinganAll');
 });
 
 
