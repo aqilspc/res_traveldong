@@ -19,6 +19,7 @@ $router->group(['prefix' => 'api'], function () use ($router) {
     $router->get('postingan_all', 'PostinganController@getPostinganAll');
     $router->get('postingan_by_id/{id}', 'PostinganController@getPostinganByid');
     $router->get('postingan_galery/{id}', 'PostinganController@getGaleryByIdTravel');
+    $router->get('galery_travel/{id}', 'PostinganController@getGaleryTravelProfiel');
     $router->get('postingan_by_travel/{id}', 'PostinganController@getPostinganByidTravel');
     $router->post('postingan_create', 'PostinganController@postPostingan');
     $router->put('postingan_update', 'PostinganController@updatePostingan');

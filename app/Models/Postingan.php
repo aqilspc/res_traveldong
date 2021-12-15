@@ -32,6 +32,12 @@ class Postingan{
 		return $data;
 	}
 
+	public function getGaleryTravelProfiel($id)
+	{
+		$data = DB::table('galery_travels')->where('id_travel',$id)->get();
+		return $data;
+	}
+
 	public function getPostinganByidTravel($id)
 	{
 		$data = DB::table('posts as ps')
