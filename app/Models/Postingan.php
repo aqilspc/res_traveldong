@@ -15,13 +15,15 @@ class Postingan{
 	public function getPostinganByid($id)
 	{
 		$data = DB::table('posts')->where('id',$id)->first();
-		return $data;
+		$hasil = [$data];
+		return $hasil;
 	}
 
 	public function getPostinganByidTravel($id)
 	{
 		$data = DB::table('posts')->where('id_travel',$id)->get();
-		return $data;
+		$hasil = [$data];
+		return $hasil;
 	}
 
 	public function postPostingan($request)

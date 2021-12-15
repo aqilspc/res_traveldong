@@ -8,20 +8,23 @@ class Pesanan{
 	public function getPesananById($id)
 	{
 		$data = DB::table('orders')->where('id',$id)->first();
-		return $data;
+		$hasil = [$data];
+		return $hasil;
 
 	}
 
 	public function getPesananByIdUser($id)
 	{
 		$data = DB::table('orders')->where('id_user',$id)->first();
-		return $data;
+		$hasil = [$data];
+		return $hasil;
 	}
 
 	public function getPesananByIdTravel($id)
 	{
 		$data = DB::table('orders')->where('id_user',$id)->first();
-		return $data;
+		$hasil = [$data];
+		return $hasil;
 	}
 
 	public function postPesanan($request)

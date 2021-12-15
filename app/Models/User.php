@@ -94,6 +94,7 @@ class User{
 	public function getUserById($id)
 	{
 		$data = DB::table('users')->where('id',$id)->first();
-		return $data;
+		$hasil = [$data];
+		return $hasil;
 	}
 }
