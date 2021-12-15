@@ -28,7 +28,8 @@ class UserController extends Controller
         $data = $this->model()->register($request);
         if($data[0])
         {
-            return $data[1];
+            $hasil = $this->model()->getUserById($data[1]);
+            return $hasil;
         }else{
             return $data[0];
         }
