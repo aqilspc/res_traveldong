@@ -51,7 +51,7 @@ class Pesanan{
 			,'us.alamat as alamat_user','us.username'
 			,'ts.nama_travel','ts.alamat as alamat_travel'
 			,'ts.logo as logo','ts.no_wa','ts.no_rekening')
-		->where('os.id_travel',$id)
+		->where('ps.id_travel',$id)
 		->first();
 		$hasil = [$data];
 		return $hasil;
