@@ -58,8 +58,10 @@ class UserController extends Controller
             $hasil[0] = 'Berhasil update profile';
         }else
         {
-            $hasil[0] = 'Gagal update profile';
+            $hasil[0] = 'Gagal update profile username telah digunakan';
         }
+
+        return $hasil;
     }
 
 }
