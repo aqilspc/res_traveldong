@@ -24,9 +24,6 @@ class PostinganController extends Controller
     public function getPostinganAll()
     {
         $data = $this->model()->getPostinganAll();
-        return response()->json(
-                    [
-                        $data
-                    ], 200);
+        return $data;
     }
 }
