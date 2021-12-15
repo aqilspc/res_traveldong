@@ -31,7 +31,7 @@ class UserController extends Controller
             $hasil = $this->model()->getUserById($data[1]);
             return $hasil;
         }else{
-            return $data[0];
+            return $data[1];
         }
     }
 

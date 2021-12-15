@@ -55,7 +55,8 @@ class User{
 		$arr = [];
 		if($data)
 		{
-			$arr[0] = 'Username sudah di gunakan';
+			$arr[0] = false;
+			$arr[1] = 'Username sudah di gunakan';
 		}else
 		{
 			$data = DB::table('users')->insertGetId(
