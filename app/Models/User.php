@@ -19,17 +19,17 @@ class User{
 				$role = $data->role;
 				if($role == 'customer')
 				{
-					$arr = [0][
+					array_push($arr, [
 						'id' =>$data->id,
 						'nama'=>$data->nama_depan.' '.$data->nama_belakang,
 						'role'=>$role,
 						'alamat'=>$data->alamat
-					];
+					]);
 				}else{ // travel
 					$travel = DB::table('travels')->where('id_user',$data->id)->first();
 					if($travel)
 					{
-						$arr = [0][
+						array_push($arr, [
 							'id' =>$data->id,
 							'nama'=>$travel->nama_travel,
 							'role'=>$role,
@@ -37,7 +37,7 @@ class User{
 							'logo'=>$travel->logo,
 							'no_wa'=>$travel->no_wa,
 							'no_rekening'=>$travel->no_rekening,
-						];
+						]);
 					}
 				}
 			}
