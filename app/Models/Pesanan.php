@@ -9,7 +9,8 @@ class Pesanan{
 	{
 		$data = DB::table('orders as os')
 		->join('users as us','us.id','=','os.id_user')
-		->join('travels as ts','ts.id','=','os.id_travel')
+		->join('posts as ps','ps.id','=','os.id_post')
+		->join('travels as ts','ts.id','=','ps.id_travel')
 		->select('os.*','us.nama_depan as nama_depan_user'
 			,'us.nama_belakang as nama_belakang_user'
 			,'us.alamat as alamat_user','us.username'
@@ -26,7 +27,8 @@ class Pesanan{
 	{
 		$data = DB::table('orders as os')
 		->join('users as us','us.id','=','os.id_user')
-		->join('travels as ts','ts.id','=','os.id_travel')
+		->join('posts as ps','ps.id','=','os.id_post')
+		->join('travels as ts','ts.id','=','ps.id_travel')
 		->select('os.*','us.nama_depan as nama_depan_user'
 			,'us.nama_belakang as nama_belakang_user'
 			,'us.alamat as alamat_user','us.username'
@@ -42,7 +44,8 @@ class Pesanan{
 	{
 		$data = DB::table('orders as os')
 		->join('users as us','us.id','=','os.id_user')
-		->join('travels as ts','ts.id','=','os.id_travel')
+		->join('posts as ps','ps.id','=','os.id_post')
+		->join('travels as ts','ts.id','=','ps.id_travel')
 		->select('os.*','us.nama_depan as nama_depan_user'
 			,'us.nama_belakang as nama_belakang_user'
 			,'us.alamat as alamat_user','us.username'
