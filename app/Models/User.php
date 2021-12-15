@@ -79,6 +79,11 @@ class User{
 
 	public function updateUser($request)
 	{
+		$cek = DB::table('users')->where('username',$request->username)->first();
+		if($cek)
+		{
+			return false;
+		}
 		$data = DB::table('users')->where('id',$request->id)->update(
 				[
 					'password'=>Hash::make($request->password),
