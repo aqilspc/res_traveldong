@@ -26,6 +26,12 @@ class Postingan{
 		return $hasil;
 	}
 
+	public function getGaleryByIdTravel($id)
+	{
+		$data = DB::table('galery_travels')->where('id_travel',$id)->get();
+		return $data;
+	}
+
 	public function getPostinganByidTravel($id)
 	{
 		$data = DB::table('posts as ps')

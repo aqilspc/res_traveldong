@@ -34,6 +34,12 @@ class PostinganController extends Controller
         return $data;
     }
 
+    public function getGaleryByIdTravel($id)
+    {
+        $data = $this->model()->getGaleryByIdTravel($id);
+        return $data;
+    }
+
     public function getPostinganByidTravel($id)
     {
         $data = $this->model()->getPostinganByidTravel($id);
