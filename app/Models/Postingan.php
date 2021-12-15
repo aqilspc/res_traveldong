@@ -63,7 +63,7 @@ class Postingan{
 		return $data;
 	}
 
-	public function updatePostingan($request)
+	public function deletePostingan($request)
 	{
 		$data = DB::table('posts')->where('id',$request->id)->delete();
 		return $data;
