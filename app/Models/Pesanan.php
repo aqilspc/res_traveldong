@@ -59,6 +59,15 @@ class Pesanan{
 
 	public function postPesanan($request)
 	{
+		$cek = DB::table('orders')
+			  ->where('id_user',$request->id_user)
+			  ->where('id_post',$request->id_post)
+			  ->where('status','belum')
+			  ->first();
+		if($cek)
+		{
+			return 0;
+		}
 		$data = DB::table('orders')->insertGetId(
 			[
 				'id_user'=>$request->id_user,

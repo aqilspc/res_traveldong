@@ -20,7 +20,14 @@ class PesananController extends Controller
     public function getPesananById($id)
     {
         $data = $this->model()->getPesananById($id);
-        return $data;
+        if($data)
+        {
+            return $data;
+        }else
+        {
+            $hasil = ['Data pesanan tidak ditemukan'];
+            return $hasil;
+        }
     }
 
     public function getPesananByIdUser($id)
@@ -39,7 +46,7 @@ class PesananController extends Controller
     {
         $data = $this->model()->postPesanan($request);
         $gagal = [];
-        $gagal[0] = 'Gagal melakukan pemesanan!';
+        $gagal[0] = 'Gagal melakukan pemesanan ada pesanan yang belum diselesaikan';
         if($data > 0 || $data){
             $getInserted = $this->model()->getPesananById($data);
             return $getInserted;
