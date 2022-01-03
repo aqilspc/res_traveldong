@@ -109,25 +109,23 @@ class User{
 		if($cek)
 		{
 			return false;
-		}else{
-			return true;
 		}
-		// $data = DB::table('users')->where('id',$request->id)->update(
-		// 		[
-		// 			'password'=>Hash::make($request->password),
-		// 			'nama_depan'=>$request->nama_depan,
-		// 			'nama_belakang'=>$request->nama_belakang,
-		// 			'username'=>$request->username,
-		// 			'alamat'=>$request->alamat,
-		// 			'created_at'=>Carbon::now()->toDateTimeString()
-		// 		]);
-		// if($request->file('photo_customer')!=null){
-		// 	$this->uploadFile($request,'photo_customer');
-		// 	$file_name = 'photo_customer';
-		// 	$upfoto = $this->oracle()->upFileOracle($file_name);
-		// 	DB::table('customers')->where('id_user',$request->id)->update(['photo'=>$upfoto['message']]);
-		// }
-		// return $data;
+		$data = DB::table('users')->where('id',$request->id)->update(
+				[
+					'password'=>Hash::make($request->password),
+					'nama_depan'=>$request->nama_depan,
+					'nama_belakang'=>$request->nama_belakang,
+					'username'=>$request->username,
+					'alamat'=>$request->alamat,
+					'created_at'=>Carbon::now()->toDateTimeString()
+				]);
+		if($request->file('photo_customer')!=null){
+			$this->uploadFile($request,'photo_customer');
+			$file_name = 'photo_customer';
+			$upfoto = $this->oracle()->upFileOracle($file_name);
+			DB::table('customers')->where('id_user',$request->id)->update(['photo'=>$upfoto['message']]);
+		}
+		return $data;
 	}
 
 	public function getUserById($id)
