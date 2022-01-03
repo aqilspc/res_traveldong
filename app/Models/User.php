@@ -26,9 +26,9 @@ class User{
 
             $key = rand().'-'.$oke;
             $tmp_file_name = "{$key}.{$extension}";
-            $tmp_file_path = "admin/images/customer/";
+            $tmp_file_path = "customer/";
             $file->move($tmp_file_path,$tmp_file_name);
-            $result = 'admin/images/customer'.'/'.$tmp_file_name;
+            $result = 'customer'.'/'.$tmp_file_name;
         return $result;
     }
 
