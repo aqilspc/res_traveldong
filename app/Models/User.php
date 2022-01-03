@@ -106,7 +106,7 @@ class User{
 	public function updateUser(Request $request)
 	{
 		$cek = DB::table('users')->where('username',$request->username)->first();
-		if($cek)
+		if(!$cek)
 		{
 			return false;
 		}
