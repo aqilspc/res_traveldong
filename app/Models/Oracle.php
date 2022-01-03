@@ -61,8 +61,7 @@ function upload_file_oracle($bucket_name, $folder_name = '', $file_name)
         $s3->putObject(array(
             'Bucket' => $bucket_name,
             'Key' => $keyname,
-            'SourceFile' => new \GuzzleHttp\Psr7\CachingStream(
-                    new \GuzzleHttp\Psr7\Stream(fopen($file_name, 'r'))),
+            'SourceFile' => $file_name,
             'StorageClass' => 'REDUCED_REDUNDANCY'
         ));
 

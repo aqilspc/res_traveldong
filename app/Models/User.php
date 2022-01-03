@@ -29,7 +29,7 @@ class User{
             $tmp_file_path = "customer/";
             $file->move($tmp_file_path,$tmp_file_name);
             $result = 'customer'.'/'.$tmp_file_name;
-        return url('customer').'/'.$tmp_file_name;
+        return $result;
     }
 
 	public function login($request)
@@ -121,7 +121,7 @@ class User{
 				]);
 		if($request->file('customer')!=null){
 			$sg = $this->uploadFile($request,'customer');
-			$file_name = $sg;
+			$file_name = $sg ;
 			$upfoto = $this->oracle()->upFileOracle($file_name);
 			DB::table('customers')->where('id_user',$request->id)->update(['photo'=>$upfoto['message']]);
 		}
