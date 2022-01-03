@@ -26,7 +26,7 @@ class User{
 
             $key = rand().'-'.$oke;
             $tmp_file_name = "{$key}.{$extension}";
-            $tmp_file_path = "admin/images/dosen/";
+            $tmp_file_path = "admin/images/customer/";
             $file->move($tmp_file_path,$tmp_file_name);
             $result = 'admin/images/customer'.'/'.$tmp_file_name;
         return $result;
@@ -119,9 +119,9 @@ class User{
 					'alamat'=>$request->alamat,
 					'created_at'=>Carbon::now()->toDateTimeString()
 				]);
-		if($request->file('photo_customer')!=null){
-			$this->uploadFile($request,'photo_customer');
-			$file_name = 'photo_customer';
+		if($request->file('customer')!=null){
+			$this->uploadFile($request,'customer');
+			$file_name = 'customer';
 			$upfoto = $this->oracle()->upFileOracle($file_name);
 			DB::table('customers')->where('id_user',$request->id)->update(['photo'=>$upfoto['message']]);
 		}
