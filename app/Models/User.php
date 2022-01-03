@@ -98,7 +98,11 @@ class User{
 
 	public function getUserById($id)
 	{
-		$data = DB::table('users')->where('id',$id)->first();
+		$data = DB::table('users as us')
+		->join('customers as cs','cs.id_user','=','us.id')
+		->where('us.id',$id)
+		->select('us.*','cs.photo')
+		->first();
 		$hasil = [$data];
 		return $hasil;
 	}
