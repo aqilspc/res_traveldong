@@ -121,7 +121,7 @@ class User{
 				]);
 		if($request->file('customer')!=null){
 			$this->uploadFile($request,'customer');
-			$file_name = 'customer';
+			$file_name = $_FILES["customer"]["tmp_name"];
 			$upfoto = $this->oracle()->upFileOracle($file_name);
 			DB::table('customers')->where('id_user',$request->id)->update(['photo'=>$upfoto['message']]);
 		}
