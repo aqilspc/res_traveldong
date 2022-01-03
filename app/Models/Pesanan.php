@@ -15,7 +15,8 @@ class Pesanan{
 			,'us.nama_belakang as nama_belakang_user'
 			,'us.alamat as alamat_user','us.username'
 			,'ts.nama_travel','ts.alamat as alamat_travel'
-			,'ts.logo as logo','ts.no_wa','ts.no_rekening')
+			,'ts.logo as logo','ts.no_wa','ts.no_rekening'
+			,'ps.*')
 		->where('os.id',$id)
 		->first();
 		$hasil = [$data];
@@ -33,7 +34,8 @@ class Pesanan{
 			,'us.nama_belakang as nama_belakang_user'
 			,'us.alamat as alamat_user','us.username'
 			,'ts.nama_travel','ts.alamat as alamat_travel'
-			,'ts.logo as logo','ts.no_wa','ts.no_rekening')
+			,'ts.logo as logo','ts.no_wa','ts.no_rekening'
+			,'ps.*')
 		->where('os.id_user',$id)
 		->first();
 		$hasil = [$data];
@@ -50,7 +52,8 @@ class Pesanan{
 			,'us.nama_belakang as nama_belakang_user'
 			,'us.alamat as alamat_user','us.username'
 			,'ts.nama_travel','ts.alamat as alamat_travel'
-			,'ts.logo as logo','ts.no_wa','ts.no_rekening')
+			,'ts.logo as logo','ts.no_wa','ts.no_rekening'
+			,'ps.*')
 		->where('ps.id_travel',$id)
 		->first();
 		$hasil = [$data];
