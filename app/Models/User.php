@@ -97,6 +97,12 @@ class User{
 				]);
 			$arr[0] = true;
 			$arr[1] = $data;
+
+			DB::table('customers')
+			->insert(['id_user'=>$data,
+				'photo'=>'https://akumenulis.com/wp-content/uploads/2020/09/495-4952535_create-digital-profile-icon-blue-user-profile-icon.png',
+				'created_at'=>Carbon::now()->toDateTimeString()
+			]);
 		}
 
 		return $arr;
