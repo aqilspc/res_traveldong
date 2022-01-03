@@ -29,9 +29,9 @@ class UserController extends Controller
         if($data[0])
         {
             $hasil = $this->model()->getUserById($data[1]);
-            return $hasil;
+            return response()->json($hasil, $data[2]);
         }else{
-            return $data[1];
+            return response()->json($data[1], $data[2]);
         }
     }
 

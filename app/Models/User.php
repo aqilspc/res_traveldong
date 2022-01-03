@@ -87,6 +87,7 @@ class User{
 		{
 			$arr[0] = false;
 			$arr[1] = 'Username sudah di gunakan';
+			$arr[2] = 401;
 		}else
 		{
 			$data = DB::table('users')->insertGetId(
@@ -101,7 +102,7 @@ class User{
 				]);
 			$arr[0] = true;
 			$arr[1] = $data;
-
+			$arr[2] = 200;
 			DB::table('customers')
 			->insert(['id_user'=>$data,
 				'photo'=>'https://akumenulis.com/wp-content/uploads/2020/09/495-4952535_create-digital-profile-icon-blue-user-profile-icon.png',
