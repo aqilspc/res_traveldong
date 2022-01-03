@@ -41,6 +41,7 @@ class User{
 			if (!Hash::check($request->password,$data->password))
 			{
 				$arr[0] = 'Password yang di masukkan salah';
+				$arr[1] = 401;
 			}else{
 				$role = $data->role;
 				if($role == 'customer')
@@ -51,6 +52,7 @@ class User{
 						'role'=>$role,
 						'alamat'=>$data->alamat
 					]);
+					$arr[1] = 200;
 				}else{ // travel
 					$travel = DB::table('travels')->where('id_user',$data->id)->first();
 					if($travel)
@@ -64,12 +66,14 @@ class User{
 							'no_wa'=>$travel->no_wa,
 							'no_rekening'=>$travel->no_rekening,
 						]);
+						$arr[1] = 200;
 					}
 				}
 			}
 		}else
 		{
 			$arr[0] = 'Username tidak ditemukan';
+			$arr[1] = 401;
 		}
 
 		return $arr;

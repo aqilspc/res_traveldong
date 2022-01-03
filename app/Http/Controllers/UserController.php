@@ -20,7 +20,7 @@ class UserController extends Controller
     public function login(Request $request)
     {
         $data = $this->model()->login($request);
-        return $data;
+        return response()->json($data, $data[1]);
     }
 
     public function register(Request $request)
