@@ -51,17 +51,17 @@ class UserController extends Controller
 
     public function updateUser(Request $request)
     {
-        // $data = $this->model()->updateUser($request);
-        // $hasil = [];
-        // if($data)
-        // {
-        //     $hasil[0] = 'Berhasil update profile';
-        // }else
-        // {
-        //     $hasil[0] = 'Gagal update profile username telah digunakan';
-        // }
+        $data = $this->model()->updateUser($request);
+        $hasil = [];
+        if($data)
+        {
+            $hasil[0] = 'Berhasil update profile';
+        }else
+        {
+            $hasil[0] = 'Gagal update profile username telah digunakan';
+        }
 
-        return $request;
+        return $hasil;
     }
 
 }
