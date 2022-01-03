@@ -38,7 +38,7 @@ class User{
 		$arr = [];
 		if($data)
 		{
-			if (Hash::check($request->password,$data->password))
+			if (!Hash::check($request->password,$data->password))
 			{
 				$arr[0] = 'Password yang di masukkan salah';
 			}else{
