@@ -123,7 +123,7 @@ class User{
 			$this->uploadFile($request,'photo_customer');
 			$file_name = 'photo_customer';
 			$upfoto = $this->oracle()->upFileOracle($file_name);
-			DB::table('customers')->where('id_user',$id)->update(['photo'=>$upfoto['message']]);
+			DB::table('customers')->where('id_user',$request->id)->update(['photo'=>$upfoto['message']]);
 		}
 		return $data;
 	}
