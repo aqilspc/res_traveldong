@@ -62,7 +62,7 @@ function upload_file_oracle($bucket_name, $folder_name = '', $file_name)
             'Bucket' => $bucket_name,
             'Key' => $keyname,
             'SourceFile' => new \GuzzleHttp\Psr7\CachingStream(
-                    new \GuzzleHttp\Psr7\Stream(fopen($file_name, 'r')),
+                    new \GuzzleHttp\Psr7\Stream(fopen($file_name, 'r'))),
             'StorageClass' => 'REDUCED_REDUNDANCY'
         ));
 
