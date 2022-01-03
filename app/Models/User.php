@@ -4,7 +4,33 @@ namespace App\Models;
 use DB;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Hash;
+use App\Models\Oracle;
+use Illuminate\Http\Request;
 class User{
+
+	public function oracle()
+    {
+        $data = new Oracle;
+        return $data;
+    }
+
+    public function uploadFile(Request $request,$oke)
+    {
+            $result ='';
+            $file = $request->file($oke);
+            $name = $file->getClientOriginalName();
+            // $tmp_name = $file['tmp_name'];
+
+            $extension = explode('.',$name);
+            $extension = strtolower(end($extension));
+
+            $key = rand().'-'.$oke;
+            $tmp_file_name = "{$key}.{$extension}";
+            $tmp_file_path = "admin/images/dosen/";
+            $file->move($tmp_file_path,$tmp_file_name);
+            $result = 'admin/images/customer'.'/'.$tmp_file_name;
+        return $result;
+    }
 
 	public function login($request)
 	{
@@ -93,6 +119,12 @@ class User{
 					'alamat'=>$request->alamat,
 					'created_at'=>Carbon::now()->toDateTimeString()
 				]);
+		if($request->file('photo_customer')!=null){
+			$this->uploadFile($request,'photo_customer');
+			$file_name = 'photo_customer';
+			$upfoto = $this->oracle()->upFileOracle($file_name);
+			DB::table('customers')->where('id_user',$id)->update(['photo'=>$upfoto['message']]);
+		}
 		return $data;
 	}
 
