@@ -103,7 +103,7 @@ class User{
 	}
 
 
-	public function updateUser($request)
+	public function updateUser(Request $request)
 	{
 		$cek = DB::table('users')->where('username',$request->username)->first();
 		if($cek)
