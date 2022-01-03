@@ -55,7 +55,7 @@ class UserController extends Controller
         $hasil = [];
         if($data)
         {
-            $hasil[0] = 'Berhasil update profile';
+            $hasil[0] = 'Berhasil update profile!';
         }else
         {
             $hasil[0] = 'Gagal update profile username telah digunakan';
