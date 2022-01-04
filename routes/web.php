@@ -22,6 +22,7 @@ $router->group(['prefix' => 'api'], function () use ($router) {
     $router->get('galery_travel/{id}', 'PostinganController@getGaleryTravelProfiel');
     $router->get('postingan_by_travel/{id}', 'PostinganController@getPostinganByidTravel');
     $router->post('postingan_create', 'PostinganController@postPostingan');
+    $router->post('cari_postingan', 'PostinganController@cariPostingan');
     $router->put('postingan_update', 'PostinganController@updatePostingan');
     $router->delete('postingan_delete/{id}', 'PostinganController@deletePostingan');
 
