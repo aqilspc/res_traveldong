@@ -52,6 +52,11 @@ class PostinganController extends Controller
         return $data;
     }
 
+    public function cariPostingan(Request $request){
+        $data = $this->model()->cariPostingan($request);
+        return $data;
+    }
+
     public function postPostingan(Request $request)
     {
         $data = $this->model()->postPostingan($request);

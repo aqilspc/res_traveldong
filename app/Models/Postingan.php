@@ -48,6 +48,30 @@ class Postingan{
 		return $data;
 	}
 
+	public function cariPostingan($request)
+	{
+		$awal = $request->tanggal_mulai;
+		$akhir = $request->tanggal_mulai;
+		$parseAwal = Carbon::parse($awal)->format('Y-m-d');
+		$parseAkhir = Carbon::parse($akhir)->format('Y-m-d');
+		$data = DB::table('posts as ps')
+		->join('travels as ts','ts.id','=','ps.id_travel')
+		->whereBetween('tanggal_mulai',[$parseAwal,$parseAkhir])
+		->whereBetween('tanggal_akhir',[$parseAwal,$parseAkhir])
+		->where('asal',$request->asal)
+		->where('tujuan',$request->tujuan)
+		->select('ps.*','ts.nama_travel','ts.logo')
+		->get();
+		if(!$data->isEmpty(){
+			return $data;
+		}else{
+			$hasil = [];
+			$hasil[0] = 'Maaf Data Yang Kamu Cari Belum Ada';
+			return $hasil;
+		}
+		
+	}
+
 	public function postPostingan($request)
 	{
 		$data = DB::table('posts')->insertGetId(
