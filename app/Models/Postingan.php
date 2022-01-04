@@ -62,7 +62,7 @@ class Postingan{
 		->Orwhere('tujuan',$request->tujuan)
 		->select('ps.*','ts.nama_travel','ts.logo')
 		->get();
-		if(!$data->isEmpty(){
+		if(!$data->isEmpty()){
 			return $data;
 		}else{
 			$hasil = [];
