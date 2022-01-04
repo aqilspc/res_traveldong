@@ -51,7 +51,7 @@ class UserController extends Controller
 
     public function getUserByUsername($username)
     {
-        $data = $this->model()->getUserByUsername($id);
+        $data = $this->model()->getUserByUsername($username);
         $hasil = [];
         if($data)
         {
