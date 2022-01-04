@@ -59,7 +59,7 @@ class Postingan{
 		->whereBetween('tanggal_mulai',[$parseAwal,$parseAkhir])
 		->whereBetween('tanggal_akhir',[$parseAwal,$parseAkhir])
 		->where('asal',$request->asal)
-		->where('tujuan',$request->tujuan)
+		->Orwhere('tujuan',$request->tujuan)
 		->select('ps.*','ts.nama_travel','ts.logo')
 		->get();
 		if(!$data->isEmpty(){
