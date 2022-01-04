@@ -36,6 +36,7 @@ $router->group(['prefix' => 'api'], function () use ($router) {
     $router->post('user_login', 'UserController@login');
     $router->post('user_register', 'UserController@register');
     $router->get('user_get_by_id/{id}', 'UserController@getUserById');
+    $router->get('user_get_by_username/{username}', 'UserController@getUserByUsername');
     $router->post('user_update', 'UserController@updateUser');
 });
 

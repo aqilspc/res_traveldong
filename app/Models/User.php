@@ -149,4 +149,14 @@ class User{
 		$hasil = [$data];
 		return $hasil;
 	}
+
+	public function getUserByUsername($username)
+	{
+		$data = DB::table('users as us')
+		->where('us.username',$username)
+		->select('us.id')
+		->first();
+		$hasil = [$data];
+		return $hasil;
+	}
 }

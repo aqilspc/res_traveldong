@@ -49,6 +49,20 @@ class UserController extends Controller
         }
     }
 
+    public function getUserByUsername($username)
+    {
+        $data = $this->model()->getUserByUsername($id);
+        $hasil = [];
+        if($data)
+        {
+            return $data;
+        }else
+        {   
+            $hasil[0] = 'User tidak ditemukan';
+            return $hasil;
+        }
+    }
+
     public function updateUser(Request $request)
     {
         $data = $this->model()->updateUser($request);
